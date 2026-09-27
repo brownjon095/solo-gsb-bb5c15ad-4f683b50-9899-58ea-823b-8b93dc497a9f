@@ -11,6 +11,7 @@ import DebugPanel from './components/DebugPanel';
 import { RedirectChainPanel } from './components/RedirectChainPanel';
 import { RegressionPanel } from './components/RegressionPanel';
 import { CoveragePanel } from './components/CoveragePanel';
+import { IntersectionPanel } from './components/IntersectionPanel';
 import { ShareCreateDialog } from './components/ShareCreateDialog';
 import { ShareUnlock } from './components/ShareUnlock';
 import {
@@ -89,6 +90,12 @@ export default function App() {
       else next.add(ruleId);
       return next;
     });
+  }, []);
+
+  // 部分交集见证等面板点击示例：只填入模拟输入，不自动运行
+  const fillRequest = useCallback((m: string, u: string) => {
+    setMethod(m);
+    setUrl(u);
   }, []);
 
   // 撤销 / 重做恢复的是完整规则快照，旧轨迹引用的是旧快照，因此同时清空当前模拟轨迹；
@@ -215,6 +222,7 @@ export default function App() {
             breakpoints={breakpoints}
             onToggleBreakpoint={toggleBreakpoint}
           />
+          <IntersectionPanel rules={rules} onFillRequest={fillRequest} />
           <CoveragePanel rules={rules} />
         </div>
         <div className="right-col">

@@ -1298,3 +1298,63 @@ input.invalid {
   border-top: 1px dashed var(--border);
   padding: 10px 12px;
 }
+
+/* ---- 部分交集见证 ---- */
+
+.ix-row {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+
+.ix-pair {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.ix-name {
+  font-weight: 600;
+  min-width: 0;
+  word-break: break-all;
+}
+
+.ix-cap {
+  color: var(--muted);
+}
+
+.ix-witness {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.ix-witness:hover {
+  border-color: var(--accent);
+}
+
+.ix-witness-url {
+  color: var(--text);
+  word-break: break-all;
+}
+
+.ix-first {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 13px;
+}

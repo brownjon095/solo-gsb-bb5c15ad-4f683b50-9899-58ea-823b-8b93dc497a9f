@@ -1220,6 +1220,117 @@ input.invalid {
   color: var(--ok);
 }
 
+/* ---- 部分交集见证 ---- */
+
+.pi-panel {
+  /* 与规则表、覆盖审计同处左列，间隔由 left-col 的 gap 控制 */
+}
+
+.pi-list {
+  margin-top: 4px;
+}
+
+.pi-card {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.pi-pair {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.pi-rule-ref {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+}
+
+.pi-rule-order {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+  flex: none;
+}
+
+.pi-rule-name {
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.pi-cross {
+  color: var(--accent);
+  flex: none;
+}
+
+.pi-witness {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: var(--panel);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+}
+
+.pi-witness:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: rgba(91, 157, 255, 0.07);
+}
+
+.pi-url {
+  flex: 1;
+  min-width: 0;
+  word-break: break-all;
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+
+.pi-fill-hint {
+  color: var(--muted);
+  font-size: 12px;
+  flex: none;
+  white-space: nowrap;
+}
+
+.pi-witness:hover .pi-fill-hint {
+  color: var(--accent);
+}
+
+.pi-winner {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: var(--muted);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pi-winner .pi-rule-name {
+  color: var(--text);
+}
+
+.pi-winner-note {
+  opacity: 0.85;
+}
+
+.tag.tag-third {
+  background: rgba(224, 169, 62, 0.18);
+  color: var(--warn);
+  white-space: nowrap;
+}
+
 /* ---- 重定向链预演 ---- */
 
 .chain-panel {

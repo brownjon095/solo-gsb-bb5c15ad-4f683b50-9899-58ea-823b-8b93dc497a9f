@@ -11,6 +11,7 @@ import DebugPanel from './components/DebugPanel';
 import { RedirectChainPanel } from './components/RedirectChainPanel';
 import { RegressionPanel } from './components/RegressionPanel';
 import { CoveragePanel } from './components/CoveragePanel';
+import { PartialIntersectionPanel } from './components/PartialIntersectionPanel';
 import { ShareCreateDialog } from './components/ShareCreateDialog';
 import { ShareUnlock } from './components/ShareUnlock';
 import {
@@ -157,6 +158,12 @@ export default function App() {
 
   const stopDebug = useCallback(() => setDebug(null), []);
 
+  // 部分交集见证：点击示例请求仅填入模拟输入，不自动运行、不改变模拟行为
+  const fillRequest = useCallback((m: string, u: string) => {
+    setMethod(m);
+    setUrl(u);
+  }, []);
+
   // 规则或请求变化时比对会话上下文签名：不一致即把暂停会话判为过期
   const debugStale =
     debug !== null &&
@@ -216,6 +223,7 @@ export default function App() {
             onToggleBreakpoint={toggleBreakpoint}
           />
           <CoveragePanel rules={rules} />
+          <PartialIntersectionPanel rules={rules} onUseRequest={fillRequest} />
         </div>
         <div className="right-col">
           <Simulator
